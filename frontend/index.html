@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Classification</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #C7EAFD,#E94E77);
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-shadow {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .custom-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            padding: 2rem;
+            margin: 1rem 0;
+            border: 1px solid #E2E8F0; 
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .custom-btn {
+            background: linear-gradient(90deg, #4299E1, #3182CE);
+            color: white;
+            font-size: 1rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+        .custom-btn:hover {
+            background: linear-gradient(90deg, #3182CE, #4299E1);
+        }
+        .title {
+            font-size: 2.5rem;
+            color: #2D3748;
+            margin-bottom: 2rem;
+        }
+        .description {
+            font-size: 1.125rem;
+            color: #4A5568;
+            margin-bottom: 3rem;
+        }
+        .upload-icon {
+            width: 6rem;
+            height: 6rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="custom-shadow bg-white rounded-lg p-12 max-w-3xl w-full">
+        <h2 class="title text-center font-extrabold">Cancer Image Classification</h2>
+        <p class="description text-center">Upload an image to predict the presence of cancer using our advanced AI models.</p>
+
+        <div class="flex flex-col md:flex-row md:space-x-12 justify-evenly">
+            <div class="text-center custom-card">
+                <h3 class="text-lg font-semibold mb-4 text-blue-600">Using Cancer Model 1</h3>
+                <form action="/predict/model_1/" method="post" enctype="multipart/form-data" class="space-y-6">
+                    <label for="uploadFile1" class="cursor-pointer flex flex-col items-center">
+                        <img src="https://www.pngplay.com/wp-content/uploads/8/Upload-Icon-Image-Transparent-Image.png" alt="Upload Icon" class="upload-icon"/>
+                        <span class="text-gray-500">Select an image for Model 1</span>
+                    </label>
+                    <input title="Select an image for Model 1" type="file" name="file" accept="image/*" required class="hidden" id="uploadFile1">
+                    <button type="submit" class="custom-btn w-full">Upload for Model 1</button>
+                </form>
+            </div>
+    
+            <div class="text-center custom-card">
+                <h3 class="text-lg font-semibold mb-4 text-green-500">Using Cancer Model 2</h3>
+                <form action="/predict/model_2/" method="post" enctype="multipart/form-data" class="space-y-6">
+                    <label for="uploadFile2" class="cursor-pointer flex flex-col items-center">
+                        <img src="https://www.pngplay.com/wp-content/uploads/8/Upload-Icon-Image-Transparent-Image.png" alt="Upload Icon" class="upload-icon"/>
+                        <span class="text-gray-500">Select an image for Model 2</span>
+                    </label>
+                    <input title="Select an image for Model 2" type="file" name="file" accept="image/*" required class="hidden" id="uploadFile2">
+                    <button type="submit" class="custom-btn w-full">Upload for Model 2</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

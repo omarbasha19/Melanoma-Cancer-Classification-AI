@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        
+        .cancerBg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://i.postimg.cc/G3gChvC3/BC-charity-comparisons-980x550.jpg');
+        }
+    </style>
+</head>
+<body class="bg-[#F0BA94] flex items-center justify-center min-h-screen cancerBg">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="flex flex-col bg-white h-fit my-10 text-[#B8E6F5] col-span-2 justify-center items-center w-11/12 shadow-black shadow-md rounded-md p-10">
+      <p class="text-3xl text-center font-bold !text-blue-400">Take care about your life now and check your body</p>
+      <div class="p-5 rounded-md w-96">
+        <form class="space-y-4" action="/login" method="post">
+          <div class="space-y-0.5">
+            <label class="text-sm text-gray-500" for="email">User Name</label>
+            <input class="block w-full p-1 mb-4 border border-gray-500 rounded" type="text" id="username" name="username" required />
+          </div>
+          <div class="space-y-1">
+            <label class="text-sm text-gray-500" for="password">Password</label>
+            <input class="block w-full p-1 border border-gray-500 rounded" type="password" id="password" name="password" aria-label="Password" required minlength="1" />
+          </div>
+          <button class="w-full bg-blue-400 text-black hover:bg-gray-700 text-white font-semibold py-2 rounded-md transition duration-300" type="submit">Login</button>
+        </form>
+        <div class="flex items-center justify-center my-5 space-x-4">
+          <div class="h-px bg-gray-300 w-36"></div>
+          <p class="text-md text-gray-80000">or</p>
+          <div class="h-px bg-gray-300 w-36"></div>
+        </div>
+        <p class="mt-4 text-center">
+          Don't have an Account?
+          <a class="font-medium hover:underline text-blue-500" href="/register">Sign Up</a>
+        </p>
+      </div>
+    </div>
+    <div class="h-screen bg-transparent text-start text-white"></div>
+  </div>
+</body>
+</html>

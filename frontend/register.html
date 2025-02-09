@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://i.postimg.cc/G3gChvC3/BC-charity-comparisons-980x550.jpg');
+            font-family: 'Inter', sans-serif;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .instructions {
+            background: rgba(44, 44, 84, 0.9);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .register-button {
+            background: linear-gradient(90deg, #4F46E5, #6D28D9);
+        }
+        .register-button:hover {
+            background: linear-gradient(90deg, #6D28D9, #4F46E5);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="max-w-screen-lg w-full grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+        <!-- Register Form Section -->
+        <div class="flex flex-col bg-white p-12 rounded-lg shadow-xl card">
+            <h1 class="font-extrabold text-4xl text-gray-800 pb-8">Register</h1>
+            <form class="space-y-6" action="/register" method="post">
+                <div>
+                    <label class="block font-semibold text-gray-700" for="name">Name</label>
+                    <input class="w-full shadow-inner bg-gray-100 outline-none rounded-lg placeholder-gray-400 text-lg p-3 border border-gray-300 mt-2" id="username" type="text" name="username" required="required" autofocus="autofocus">
+                </div>
+                <div>
+                    <label class="block font-semibold text-gray-700" for="password">Password</label>
+                    <input class="w-full shadow-inner bg-gray-100 outline-none rounded-lg placeholder-gray-400 text-lg p-3 border border-gray-300 mt-2" id="password" type="password" name="password" required="required" autocomplete="new-password">
+                </div>
+                <div class="flex items-center justify-between mt-6">
+                    <button type="submit" class="register-button flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white shadow-lg hover:shadow-xl transition duration-300">
+                        Register
+                    </button>
+                    <a href="/login" class="font-semibold text-gray-700 hover:text-indigo-500 px-2 py-1.5 transition duration-300">
+                        Already registered?
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="instructions">
+            <h1 class="font-extrabold text-4xl mb-6">Instructions</h1>
+            <ul class="space-y-4">
+                <li>All users must provide a valid email address and password to create an account.</li>
+                <li>Users must not use offensive, vulgar, or otherwise inappropriate language in their username or profile information.</li>
+                <li>Users must not create multiple accounts for the same person.</li>
+            </ul>
+        </div>
+    </div>   
+</body>
+</html>
